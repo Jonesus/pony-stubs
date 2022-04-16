@@ -1,0 +1,33 @@
+{
+  // ref: https://gredowski.com/blogging/2021/02/21/linting-whole-project-in-vscode.html
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "pylint-whole-project",
+      "type": "shell",
+      "command": "poetry run pylint pony-stubs",
+      "presentation": {
+        "echo": true,
+        "reveal": "never",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true,
+        "revealProblems": "never"
+      },
+      "problemMatcher": {
+        "owner": "pylint",
+        "source": "pylint-whole-project",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(W|E|C|R).+:\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      }
+    }
+  ]
+}

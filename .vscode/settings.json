@@ -1,0 +1,13 @@
+{
+  "python.formatting.provider": "black",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.diagnosticMode": "workspace",
+  "editor.formatOnSave": true,
+  "triggerTaskOnSave.tasks": {
+    "pylint-whole-project": ["**/*.*pyi"]
+  },
+  "FSharp.suggestGitignore": false
+}

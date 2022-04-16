@@ -1,0 +1,45 @@
+repos:
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v1.3.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: check-yaml
+      - id: check-toml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+        name: Format code with Black
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
+        name: Sort imports
+
+  - repo: local
+    hooks:
+      - id: pylint
+        name: Lint with Pylint
+        entry: poetry run pylint pony-stubs
+        language: system
+        types: [python]
+        args: [
+            "-rn", # Only display messages
+            "-sn", # Don't display the score
+          ]
+
+      - id: pyright
+        name: Check types with Pyright
+        entry: poetry run pyright pony-stubs
+        language: system
+        pass_filenames: false
+        types: [python]
