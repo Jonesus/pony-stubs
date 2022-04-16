@@ -14,7 +14,7 @@ pre-commit = "2.18.1"
 black = "22.3.0"
 pylint = "2.13.5"
 isort = "5.10.1"
-pyright = "1.1.237"
+pyright = "1.1.238"
 mypy = "0.942"
 pony = "0.7.16"
 psycopg2 = "2.9.3"
@@ -53,6 +53,7 @@ disable = [
   "too-many-public-methods",
   "signature-differs",
   "bad-mcs-method-argument",
+  "useless-object-inheritance",
 ]
 
 [build-system]
