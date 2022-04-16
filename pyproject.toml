@@ -3,8 +3,12 @@ name = "pony-stubs"
 version = "0.1.0"
 description = "Type stubs for Pony ORM"
 authors = ["Joonas Palosuo <joonas.palosuo@gmail.com>"]
+readme = "README.md"
 license = "MIT"
 keywords = ["pony", "types", "stubs", "mypy", "pyright"]
+packages = [
+  {include = "pony-stubs"}
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
@@ -18,6 +22,11 @@ pyright = "1.1.238"
 mypy = "0.942"
 pony = "0.7.16"
 psycopg2 = "2.9.3"
+commitizen = "2.24.0"
+
+[tool.commitizen]
+version = "0.1.0"
+version_files = ["pyproject.toml:version"]
 
 [tool.black]
 include = '\.pyi?$'

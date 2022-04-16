@@ -1,0 +1,54 @@
+name: Continuous Delivery
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  code-quality:
+    uses: jonesus/pony-stubs/.github/workflows/lint-and-typecheck.yml@main
+
+  bump-version:
+    name: "Bump version and create changelog with commitizen"
+    needs: code-quality
+    if: "!startsWith(github.event.head_commit.message, 'bump:')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - id: cz
+        name: Create bump and changelog
+        uses: commitizen-tools/commitizen-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Print Version
+        run: echo "Bumped to version ${{ steps.cz.outputs.version }}"
+
+  publish:
+    name: "Publish new version"
+    needs: bump-version
+    if: "!startsWith(github.event.head_commit.message, 'bump:')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
+      - uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: 1.1.13
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Build package
+        run: poetry build
+
+      - name: Publish to PyPi
+        run: poetry publish -u __token__ -p ${{ secrets.PYPI_TOKEN }}
