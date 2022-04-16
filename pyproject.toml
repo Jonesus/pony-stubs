@@ -64,6 +64,7 @@ disable = [
   "bad-mcs-method-argument",
   "useless-object-inheritance",
   "invalid-sequence-index",
+  "used-before-assignment",
 ]
 
 [build-system]
