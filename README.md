@@ -9,6 +9,10 @@ Python type hint stubs for [Pony ORM](https://github.com/ponyorm/pony)
 2. Integrate the contents of this package into the official Pony ORM repository (self-deprecation)
 3. Focus primarily on the aspects that users of Pony ORM most often run into (defining models, querying them etc.)
 
+## Progress so far
+1. Model fields should get dynamically typed correctly by using `Required`, `Set` etc.
+2. Querying models (without using attribute lifting) should be well typed
+
 ## Development
 The development environment for this package requires `poetry` (https://python-poetry.org/docs/master/#installing-with-the-official-installer)
 
