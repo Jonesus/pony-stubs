@@ -4,6 +4,16 @@ Python type hint stubs for [Pony ORM](https://github.com/ponyorm/pony)
 
 **NOTE:** This project is still very much a WIP, the types shouldn't be expected to be anywhere close to completion.
 
+## Usage
+Install the package with your preferred Python dependency manager:
+```
+pip install pony-stubs
+
+pipenv install pony-stubs
+
+poetry add -D pony-stubs
+```
+
 ## Goals
 1. Provide type hints for Pony ORM that support both MyPy and Pyright on their strictest modes
 2. Integrate the contents of this package into the official Pony ORM repository (self-deprecation)
