@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pony-stubs"
-version = "0.2.1"
+version = "0.2.2"
 description = "Type stubs for Pony ORM"
 authors = ["Joonas Palosuo <joonas.palosuo@gmail.com>"]
 readme = "README.md"
@@ -25,7 +25,7 @@ psycopg2 = "2.9.3"
 commitizen = "2.24.0"
 
 [tool.commitizen]
-version = "0.2.1"
+version = "0.2.2"
 version_files = ["pyproject.toml:version"]
 
 [tool.black]

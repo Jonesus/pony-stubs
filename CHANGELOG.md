@@ -1,3 +1,9 @@
+## 0.2.2 (2022-04-16)
+
+### Fix
+
+- checkout proper commit for publish
+
 ## 0.2.1 (2022-04-16)
 
 ### Fix
