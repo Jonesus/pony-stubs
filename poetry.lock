@@ -263,7 +263,7 @@ testutil = ["gitpython (>3)"]
 
 [[package]]
 name = "pyright"
-version = "1.1.237"
+version = "1.1.238"
 description = "Command line wrapper for pyright"
 category = "dev"
 optional = false
@@ -367,7 +367,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "62d2e09c165ce12261ce31a75f135734b051e12e23a8c1ba588191861748e58d"
+content-hash = "44c6f3aed864ec4348b51533d0b5339accdc315fa30044654ca4a2a68ae04726"
 
 [metadata.files]
 astroid = [
@@ -545,8 +545,8 @@ pylint = [
     {file = "pylint-2.13.5.tar.gz", hash = "sha256:dab221658368c7a05242e673c275c488670144123f4bd262b2777249c1c0de9b"},
 ]
 pyright = [
-    {file = "pyright-1.1.237-py3-none-any.whl", hash = "sha256:4e9ec6b21308925aadb01187f1f6c68cc27f9733365b7d0246ff53bda90d10cf"},
-    {file = "pyright-1.1.237.tar.gz", hash = "sha256:b18e11cdc2620f48ad34817c93060243b81095ce5b17cdddb8d9e2ee6ad4d002"},
+    {file = "pyright-1.1.238-py3-none-any.whl", hash = "sha256:0c8b8be229f56de98622257acb87d2de641e670ba60e79173ecd04a51bf2fb82"},
+    {file = "pyright-1.1.238.tar.gz", hash = "sha256:28871ac1734c813102734eb84504d5fc68db9dfbbbc4d472d3f1f359e7fb5861"},
 ]
 pyyaml = [
     {file = "PyYAML-6.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:d4db7c7aef085872ef65a8fd7d6d09a14ae91f691dec3e87ee5ee0539d516f53"},
