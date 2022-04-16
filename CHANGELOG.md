@@ -1,3 +1,14 @@
+## 0.3.0 (2022-04-16)
+
+### Feat
+
+- typing for field definitions
+- add Entity and Query generics
+
+### Fix
+
+- importing whole pony without subpackages
+
 ## 0.2.3 (2022-04-16)
 
 ### Fix
