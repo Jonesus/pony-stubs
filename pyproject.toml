@@ -63,6 +63,7 @@ disable = [
   "signature-differs",
   "bad-mcs-method-argument",
   "useless-object-inheritance",
+  "invalid-sequence-index",
 ]
 
 [build-system]
