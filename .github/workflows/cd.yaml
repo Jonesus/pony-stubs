@@ -13,6 +13,8 @@ jobs:
     name: "Bump version and create changelog with commitizen"
     needs: code-quality
     if: "!startsWith(github.event.head_commit.message, 'bump:')"
+    outputs:
+      bump_commit_sha: ${{ steps.sha.outputs.SHA}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,12 +29,21 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
 
+      - id: sha
+        run: |
+          new_commit_sha=$(git rev-parse HEAD)
+          echo $new_commit_sha
+          echo "::set-output name=SHA::$new_commit_sha"
+
   publish:
     name: "Publish new version"
-    if: "startsWith(github.event.head_commit.message, 'bump:')"
+    needs: bump-version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ needs.bump-version.outputs.bump_commit_sha }}
+          fetch-depth: 0
 
       - uses: actions/setup-python@v2
         with:
