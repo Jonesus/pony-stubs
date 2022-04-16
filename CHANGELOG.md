@@ -1,3 +1,9 @@
+## 0.2.3 (2022-04-16)
+
+### Fix
+
+- also create github release
+
 ## 0.2.2 (2022-04-16)
 
 ### Fix
