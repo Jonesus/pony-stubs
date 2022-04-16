@@ -6,6 +6,7 @@ on:
 
 jobs:
   code-quality:
+    if: "!startsWith(github.event.head_commit.message, 'bump:')"
     uses: jonesus/pony-stubs/.github/workflows/lint-and-typecheck.yml@main
 
   bump-version:
