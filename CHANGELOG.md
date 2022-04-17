@@ -1,3 +1,14 @@
+## 0.5.0 (2022-04-17)
+
+### Feat
+
+- improve model field type inferences
+
+### Fix
+
+- optional field type
+- query types for select()
+
 ## 0.4.0 (2022-04-16)
 
 ### Feat
