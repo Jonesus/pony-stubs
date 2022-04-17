@@ -1,3 +1,9 @@
+## 0.5.2 (2022-04-17)
+
+### Fix
+
+- documentation missing imports and remove stupid BaseClass
+
 ## 0.5.1 (2022-04-17)
 
 ### Fix
