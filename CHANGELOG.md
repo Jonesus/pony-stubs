@@ -1,3 +1,9 @@
+## 0.5.1 (2022-04-17)
+
+### Fix
+
+- infer PrimaryKey type correctly
+
 ## 0.5.0 (2022-04-17)
 
 ### Feat
