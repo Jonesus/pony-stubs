@@ -23,7 +23,17 @@ Then define your models:
 # later on when forward declaring relation types with strings
 from __future__ import annotations
 
-from pony.orm import Database, Required, select, max, desc
+from pony.orm import (
+    Database,
+    Required,
+    Optional,
+    Set,
+    PrimaryKey,
+    select,
+    max,
+    count,
+    desc
+)
 
 db = Database("sqlite", "store.sqlite", create_db=True)
 
@@ -32,12 +42,6 @@ db = Database("sqlite", "store.sqlite", create_db=True)
 # is enough misdirection for it not to complain, but MyPy needs an extra
 # `type: ignore` comment above each model declaration to work.
 DbEntity = db.Entity
-
-# If using MyPy instead of Pyright, you might want to create a dummy base
-# class wrapping `DbEntity` so that only it needs the `type: ignore`
-# annotation
-class BaseEntity(DbEntity):  # type: ignore
-    pass
 
 
 class Customer(DbEntity):  # type: ignore
@@ -56,7 +60,7 @@ class Customer(DbEntity):  # type: ignore
     # type checkers can infer it correctly
     orders: Set["Order"] = Set("Order")
 
-class Order(BaseEntity):
+class Order(DbEntity):  # type: ignore
     # We can also declare the primary key with Pony constructors and
     # infer the type that way
     id = PrimaryKey(int, auto=True)
@@ -66,7 +70,7 @@ class Order(BaseEntity):
     # there's no need for annotations
     customer = Required(Customer)
 
-class Product(BaseEntity):
+class Product(DbEntity):  # type: ignore
     id: int
     name = Required(str)
     price = Required(Decimal)
@@ -94,7 +98,6 @@ result = (
     .order_by(lambda c: desc(sum(c.orders.total_price)))
     .first()
 )
-
 ```
 
 ## Limitations
