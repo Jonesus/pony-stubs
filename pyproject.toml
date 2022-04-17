@@ -66,6 +66,8 @@ disable = [
   "useless-object-inheritance",
   "invalid-sequence-index",
   "used-before-assignment",
+  "unsubscriptable-object",
+  "expression-not-assigned"
 ]
 
 [build-system]
