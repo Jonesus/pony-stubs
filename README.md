@@ -2,6 +2,11 @@
 
 Python type hint stubs for [Pony ORM](https://github.com/ponyorm/pony)
 
+⚠️⚠️⚠️ **DEPRECATED** ⚠️⚠️⚠️
+
+This project has been deprecated in favor of [`types-pony`](https://pypi.org/project/types-pony/) and won't be maintained anymore (<https://github.com/Jonesus/pony-stubs/issues/10>). Please switch to it instead!
+
+
 ## Goals
 1. Provide type hints for Pony ORM that support both MyPy and Pyright on their strictest modes
 2. Integrate the contents of this package into the official Pony ORM repository (self-deprecation)
